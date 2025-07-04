@@ -1,6 +1,24 @@
 # Example configuration for pgcopy
-# This file demonstrates the ignore and transform features
+# This file demonstrates database connections and table configuration
 
+# Database connections (optional - can also use command line flags)
+source:
+  host: "source-db.example.com"
+  port: 5432
+  database: "source_db"
+  username: "source_user"
+  password: "${SOURCE_PASSWORD}"  # Environment variable support
+  ssl_mode: "require"
+
+target:
+  host: "target-db.example.com"
+  port: 5432
+  database: "target_db"
+  username: "target_user"
+  password: "${TARGET_PASSWORD}"  # Environment variable support
+  ssl_mode: "require"
+
+# Table configuration
 schemas:
   - name: public
     tables:
